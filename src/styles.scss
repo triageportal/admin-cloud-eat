@@ -1,1 +1,512 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/materialize-css/dist/css/materialize.css";
+@import './variable.scss';
+/* Materialize forms update*/
+
+.theme {
+    background-color: $theme-color;
+}
+
+
+
+
+
+.input-field {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+input:not([type]),
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default),
+input[type=email]:not(.browser-default),
+input[type=url]:not(.browser-default),
+input[type=time]:not(.browser-default),
+input[type=date]:not(.browser-default),
+input[type=datetime]:not(.browser-default),
+input[type=datetime-local]:not(.browser-default),
+input[type=tel]:not(.browser-default),
+input[type=number]:not(.browser-default),
+input[type=search]:not(.browser-default),
+textarea.materialize-textarea {
+  height: 2.5rem;
+}
+
+.btn-flat {
+  height: 30px;
+  line-height: 30px;
+}
+
+.brand-logo {
+  font-size: 1.6rem !important;
+}
+
+.helper-text {
+  margin-top: -10px;
+}
+
+
+/* Materialize forms update*/
+
+/* Helper */
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Helper */
+
+/* Main style*/
+html,
+body {
+  min-height: 100vh;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.block {
+  display: block;
+}
+
+.form-error {
+  span {
+    display: block;
+    &:not(:first-child) {
+      padding-top: 6px;
+    }
+  }
+}
+
+.body-wrap {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+footer {
+  .container {
+    margin-bottom: 0;
+  }
+}
+
+nav {
+  height: 54px;
+  line-height: 54px;
+  .brand-logo {
+      font-size: 1.5rem;
+  }
+  a.sidenav-trigger i{
+      height: 54px;
+      line-height: 54px;  
+      cursor: pointer;
+  }
+  .active {
+      background-color: rgba(0,0,0,0.2);
+  }
+}
+.page-title {
+  color: #616161;
+  padding: 25px 0;
+  margin: 25px 0;
+
+  @media only screen and (max-device-width: 480px) {
+    padding: 15px 0;
+    margin: 15px 0;
+  }
+}
+
+.portal-forms {
+  max-width: 400px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 150px;
+}
+
+.triage-cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+
+  .col {
+    margin: 0 auto 30px auto;
+    min-width: 300px;
+
+    @media only screen and (min-width: 1280px) {
+      min-width: 400px;
+    }
+
+    @media only screen and (max-device-width: 480px) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.patient-data {
+  border-bottom: 1px solid #d0d0d0;
+  border-top: 1px solid #d0d0d0;
+  border-right: 3px solid #ffe0b2;
+  padding: 6px 20px 15px 24px;
+  span {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 500;
+    margin-right: 10px;
+  }
+  
+}
+
+.card-action {
+  a {
+    cursor: pointer;
+  }
+}
+
+.btn-small {
+  height: 25.4px;
+  line-height: 22.4px;
+  margin: 10px
+}
+
+.result {
+  max-width: 300px;
+  &>div{
+      display: flex;
+      text-align: left;
+      div {
+          &:first-child {
+              flex-basis: 90px;
+              font-size: 16px;
+              font-weight: 500;
+              color: #666666;
+          }
+          &:last-child {
+              font-weight: 600;
+              line-height: 24px;
+          }
+      }
+  }
+}
+
+
+@media print { 
+  footer, #nav-mobile, .sidenav, .sidenav-trigger { 
+      display: none !important; 
+  } 
+}
+
+
+/* fullscreen loader/spinner*/
+
+.loading {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(247, 247, 247, 0.58);
+}
+
+.page-footer {
+  padding: 10px 0;
+  .footer-copyright {
+    background-color: transparent;
+}
+}
+
+.footer-menu {
+  
+    margin: 0;    
+  
+  li {
+    display: inline;
+    .material-icons {
+      font-size: 20px;
+    }
+    .dropdown-trigger {
+      margin-left: 30px;
+    }
+  }
+}
+
+
+/* Modal start */
+
+.modal {
+  width: 45%;
+
+  &.success {
+    border-left: 8px solid #4caf50;
+  }
+
+  &.error {
+    border-left: 8px solid #e53935; 
+  }
+
+  &.warning {
+    border-left: 8px solid #ffa723; 
+  }
+
+  .modal-btn {
+    margin-right: 20px!important;
+    text-transform: capitalize;
+  }
+
+  .modal-footer {
+    a {
+        font-weight: 600;
+    }
+    .modal-btn {
+      &.btn-blue {
+        background-color: #5c6bc0;
+      }
+      &.btn-red {
+        background-color: #ff5252;
+      }
+    }
+  }
+}
+
+.modal-sm {
+  display: none;
+  width: 400px;
+}
+
+
+
+.open {
+  z-index: 1003;
+  display: block;
+  opacity: 1;
+  top: 10%;  
+  transition: 2s transform;
+  transform-origin: bottom center; 
+}
+
+
+.overlay {
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height: 0;
+  transition: opacity 0.5s ease;
+}
+
+.overlay-on {
+  opacity:1;
+  height: 100%;
+}
+
+
+/* admin*/
+.search {
+  position: absolute;
+  right: 1px;
+}
+
+.container {
+  width: 90%;
+  //margin-bottom: 40px;
+}
+.dashboard {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+  .card-content {
+    padding: 10px;
+    .card-title {
+      margin-bottom: 15px;
+      margin-left: 7px;
+      border-bottom: 1px solid #efefef;
+    }
+  }
+}
+.portal-forms {
+  flex-basis: 33.333%;
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    flex-basis: 100%;
+  }
+
+  /* f */
+
+  .create-clinic {
+    margin-bottom: 40px;
+    margin-left: 10px;
+  }
+
+  .section {
+    text-align: left;
+    padding: 0 20px;
+
+    @media (min-width: 320px) and (max-width: 767px) {
+      padding: 0;
+    }
+
+    .staff-label {
+      font-weight: bold;
+      width: 150px;
+      display: inline-block;
+
+      @media (min-width: 320px) and (max-width: 767px) {
+        width: auto;
+      }
+    }
+
+    .staff-data {
+      @media (min-width: 320px) and (max-width: 767px) {
+        text-align: right;
+      }
+    }
+  }
+
+  .staff-label {
+    font-weight: bold;
+    min-width: 150px;
+    display: inline-block;
+    color: #4c4c4c;
+
+    @media (min-width: 320px) and (max-width: 767px) {
+      width: auto;
+    }
+  }
+
+  .staff-data {
+    @media (min-width: 320px) and (max-width: 767px) {
+      text-align: right;
+    }
+  }
+
+  .table {
+    display: table;
+    width: 100%;
+    //height: 30px;
+  }
+
+  .table-row {
+    display: table;
+    margin: 2rem -2rem 0 -2rem;
+    border-bottom: 2px solid #a5a5a5;
+
+    .table-cell {
+      display: table-cell;
+      width: 150px;
+      padding: 2px 0;
+      text-align: center;
+      background: #5c6bc0;
+      color: #ffffff;
+      cursor: pointer;
+
+      &:hover {
+        background: #838dc7;
+      }
+
+      &:not(:last-child) {
+        border-right: 1px solid #a5a5a5;
+      }
+
+      &.disabled {
+          background: #b7bee6;
+          color: #e2e2e2;
+          cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.collection-item {
+  text-align: left;
+  cursor: pointer;
+  &:hover {
+    background: #f8f8f8;
+  }
+  span {
+    display: block;
+    &:first-child{
+      font-weight: bold;
+    }
+    &.created-at {
+      margin-top: -20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+}
+
+
+/* Modal  end*/
+
+
+/* IE only styles  */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .main {
+    min-height: 100vh;
+  }
+  footer {
+    margin-top: -70px;
+  }
+}
+/*  IE only styles */
+
+@media only screen and (min-width: 960px) {
+
+  /* styles for browsers larger than 960px; */
+
+}
+
+@media only screen and (min-width: 1440px) {
+
+  /* styles for browsers larger than 1440px; */
+
+}
+
+@media only screen and (min-width: 2000px) {
+
+  /* for sumo sized (mac) screens */
+
+}
+
+@media only screen and (max-device-width: 480px) {
+
+  /* styles for mobile browsers smaller than 480px; (iPhone) */
+
+}
+
+@media only screen and (device-width: 768px) {
+
+  /* default iPad screens */
+
+}
+
+/* different techniques for iPad screening */
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+
+  /* For portrait layouts only */
+
+}
+
+
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+
+  /* For landscape layouts only */
+
+}

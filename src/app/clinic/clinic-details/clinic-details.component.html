@@ -1,0 +1,96 @@
+<h5 class="center-align page-title">Clinic</h5>
+<div class="row">
+  <div class="portal-forms center clinic-tabs">
+    <div class="card">
+      <div class="row">
+        <div class="col s12">
+          <ul class="tabs" #tabs>
+            <li class="tab col"><a (click)="tabSwitch(0)">Details</a></li>
+            <li class="tab col"><a (click)="tabSwitch(1)">Contacts</a></li>
+            <li class="tab col"><a (click)="tabSwitch(2)">Triages</a></li>
+          </ul>
+
+        </div>
+        <div class="col s12" [ngStyle]="{'display': clinicTabs[0]}">
+          <div>
+            <span class="staff-label">Clinic:</span>
+            <span class="staff-data">{{clinic.name}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Adress:</span>
+            <span class="staff-data">{{clinic.addressLineOne}}</span>
+          </div>
+          <div>
+            <span class="staff-label" *ngIf="clinic.addressLineTwo">Address line 2:</span>
+            <span class="staff-data">{{clinic.addressLineTwo}}</span>
+          </div>
+          <div>
+            <span class="staff-label">City</span>
+            <span class="staff-data">{{clinic.city}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Zip code</span>
+            <span class="staff-data">{{clinic.zipCode}}</span>
+          </div>
+          <div>
+            <span class="staff-label">State or region</span>
+            <span class="staff-data">{{clinic.stateOrRegion}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Country</span>
+            <span class="staff-data">{{clinic.country}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Language</span>
+            <span class="staff-data">{{clinic.language}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Phone</span>
+            <span class="staff-data">{{clinic.phone}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Email</span>
+            <span class="staff-data">{{clinic.clinicEmail}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Website: </span>
+            <span class="staff-data">{{clinic.website}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Status: </span>
+            <span class="staff-data">{{clinic.status}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Created on: </span>
+            <span class="staff-data">{{clinic.created_at | date : 'short'}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Created by: </span>
+            <span class="staff-data">{{clinic.created_by}}</span>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell waves-effect waves" (click)="onAssign(clinic)">Assign</div>
+            <div class="table-cell waves-effect waves" (click)="onEdit(clinic)">Edit</div>
+            <div class="table-cell waves-effect waves" (click)="onDelete(clinic)">Delete</div>
+          </div>
+        </div>
+        <div class="col s12" [ngStyle]="{'display': clinicTabs[1]}">
+          <div>
+            <span class="staff-label">Name</span>
+            <span class="staff-data">{{clinic.contactName}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Email: </span>
+            <span class="staff-data">{{clinic.contactEmail}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Phone </span>
+            <span class="staff-data">{{clinic.contactPhone}}</span>
+          </div>
+        </div>
+        <div class="col s12" [ngStyle]="{'display': clinicTabs[2]}">Subcribed triages and details</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div id="triModal" class="modal" [ngClass] = "modal?.type" #triModal>
+  <div class="modal-content">
+    <h4>{{modal?.header}}</h4>
+    <p class="bold" *ngFor="let text of modal?.text">{{text}}</p>
+  </div>
+  <div class="modal-footer">
+    <ng-container *ngFor="let button of modal?.buttons">
+      <button 
+        type="button" 
+        [ngClass] = "button?.class"
+        class="waves-effect waves btn-small white-text modal-btn" 
+        (click)="onRespond(button?.name)">{{button.name}}</button>
+      </ng-container>
+  </div>
+</div>

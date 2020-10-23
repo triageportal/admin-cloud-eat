@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-content">
+  <span class="card-title">Clinic</span>
+
+  <a class="left create-clinic" [routerLink]="['./../clinic/create-edit-clinic']" >Create clinic</a>
+  <div class="row">
+      <div class="input-field col s12">
+      <input type="text" id="serachClinic" [(ngModel)]="searchQuery" (keyup.enter)="onSearch()" required>
+      <label for="serachClinic">Search clinic</label>            
+      <button class="waves-effect waves btn-small white-text indigo lighten-1 search" (click)="onSearch()">Search</button>
+      <!-- <a class='dropdown-trigger btn' href='#' data-target='searchBy' #searchBy>Drop Me!</a>
+      <ul id='searchBy' class='dropdown-content' >
+        <li><a href="#!">one</a></li>
+        <li><a href="#!">two</a></li>
+        <li class="divider" tabindex="-1"></li>
+        <li><a href="#!">three</a></li>
+        <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+        <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+      </ul> -->
+      <div *ngIf="minLengthError" class="helper-text red-text left">
+        <span>Search keyword should be minimum 3 characters</span>
+      </div>
+    </div>
+  </div>
+
+  <h6 class="red-text" *ngIf="errorMessageToggle">{{errorMessage}}</h6>
+
+  <ul class="collection" *ngIf="clinics">
+      <li class="collection-item" *ngFor="let clinic of clinics; let i=index" (click)="setClinic(clinic)">
+        <span class="title">{{clinic.name}}</span>
+        <span>{{clinic.city}}</span>
+        <span>{{clinic.stateOrRegion}}</span>
+        <span>{{clinic.country}}</span>
+        <span class="right created-at">Created on: {{clinic.created_at | date : 'shortDate'}}</span>
+      </li>
+  </ul>
+</div>
+</div>

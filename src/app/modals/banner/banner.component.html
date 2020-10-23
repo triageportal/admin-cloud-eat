@@ -1,0 +1,13 @@
+
+
+<ng-container *ngIf="(user && user.clinic_id)">
+  <div class="banner red white-text" [ngStyle]="{'display': user.clinic_id==0 ? 'none' : 'block'}">
+    <p >
+        <span class="">Your assigned clinic: </span>
+        <span class="bold" *ngIf="user.clinicName"> {{user.clinicName}}</span> 
+        <a class="white-text bold" (click)="unassign()">Unassign</a>
+    </p>  
+  </div>
+</ng-container>
+
+

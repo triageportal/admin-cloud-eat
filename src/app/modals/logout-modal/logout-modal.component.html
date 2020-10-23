@@ -1,0 +1,12 @@
+<div id="logoutModal" class="modal warning" #logoutModal>
+  <div class="modal-content">
+    <h4>Logging out</h4>
+    <p class="bold" >You will gogged out due to inactivity in <span>{{seconds}}</span> seconds</p>
+  </div>
+  <div class="modal-footer">
+    
+        <button type="submit" class="waves-effect waves btn-small white-text modal-btn indigo lighten-1" (click)="onRespond('stay')">Stay</button>
+        <button type="button" class="waves-effect waves btn-small white-text modal-btn red accent-2" (click)="onRespond('logout')">Logout</button>
+      
+  </div>
+</div>

@@ -1,0 +1,57 @@
+
+<div class="body-wrap">
+  <div class="main">
+    <nav class="nav-wrapper indigo">
+      <div class="container">
+        <a routerLink="/" class="brand-logo">Admin Dashboard</a>
+      </div>
+
+    </nav>
+
+
+    <h5 class="center-align page-title">Login</h5>
+    <div class="container">
+
+      <div class="portal-forms center">
+        <h6 class="red-text" *ngIf="noResults">{{errorMessage}}</h6>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="email" id="email" formControlName="email" required>
+              <label for="email">Email</label>
+              <div *ngIf="email.errors && (email.dirty || email.touched )" class="helper-text red-text left">
+                <span *ngIf="email.errors.required">Email is required</span>
+                <span *ngIf="email.errors.email">Wrong email format</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="password" id="password" formControlName="password" required (focus)="onFocus(1)">
+              <label for="password">Password</label>
+              <div *ngIf="password.errors && (password.dirty || password.touched )">
+                <span *ngIf="password.errors.required" class="helper-text red-text left">Password is required</span>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 btn-group">
+            <button type="submit" class="waves-effect waves btn-small white-text indigo lighten-1"
+              [disabled]="myForm.invalid">Submit</button>
+            <button type="button" class="waves-effect waves btn-small white-text red accent-2"
+              (click)="onReset()">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer indigo darken-4">
+    <div class="container">
+      <div class="footer-copyright">
+
+        © 2020 Triage Portal
+      </div>
+    </div>
+  </footer>
+</div>
+
+
