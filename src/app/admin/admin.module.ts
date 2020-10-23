@@ -6,10 +6,12 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminComponent } from './admin/admin.component';
 import { FormsModule } from '@angular/forms';
 import { ClinicCardComponent } from './admin-dashboard/clinic-card/clinic-card.component';
+import { RestaurantCardComponent } from './admin-dashboard/restaurant-card/restaurant-card.component';
+import { AccountCardComponent } from './admin-dashboard/account-card/account-card.component';
 
 
 @NgModule({
-  declarations: [AdminDashboardComponent, AdminComponent, ClinicCardComponent],
+  declarations: [AdminDashboardComponent, AdminComponent, ClinicCardComponent, RestaurantCardComponent, AccountCardComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

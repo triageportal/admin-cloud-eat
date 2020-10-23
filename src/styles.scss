@@ -174,7 +174,9 @@ nav {
 .btn-small {
   height: 25.4px;
   line-height: 22.4px;
-  margin: 10px
+  margin: 10px;
+  color: $theme-color;
+  border: 1px solid $theme-color;
 }
 
 .result {
@@ -327,7 +329,7 @@ nav {
 }
 .dashboard {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   padding-top: 20px;
   .card-content {
     padding: 10px;
@@ -338,19 +340,42 @@ nav {
     }
   }
 }
+
+[type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:before, [type="radio"].with-gap:checked + span:after {
+  border-color: $theme-color;
+}
+
+[type="radio"]:checked + span:after, [type="radio"].with-gap:checked + span:after {
+  background-color: $theme-color;
+}
+
 .portal-forms {
   flex-basis: 33.333%;
-
+  margin: 0 10px;
   @media (min-width: 320px) and (max-width: 767px) {
     flex-basis: 100%;
   }
 
-  /* f */
+  .search-by {
+    padding: 10px 0 5px 10px;
+    color: $light-gray;
+  }
 
-  .create-clinic {
-    margin-bottom: 40px;
+  .create-link {
+    position: absolute;
+    top: 18px;
+    right: 11px;
     margin-left: 10px;
   }
+
+  .radio-btn-group {
+    margin-bottom: 20px;
+    &.col {
+      padding: 0 0.40rem;
+    }
+  }
+
+
 
   .section {
     text-align: left;

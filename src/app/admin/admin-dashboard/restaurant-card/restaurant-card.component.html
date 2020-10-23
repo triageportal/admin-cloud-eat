@@ -1,3 +1,44 @@
-<p>
-  restaurant-card works!
-</p>
+<div class="card">
+  <div class="card-content">
+  <span class="card-title">Restaurant</span>
+
+  <a class="left create-link" [routerLink]="['./../restaurant/create-edit-restaurant']" >Create restaurant</a>
+  <div class="search-by">Search by</div>
+  <div class="row">
+      <div class="input-field radio-btn-group col s12">
+        <p>
+          <label>
+            <input class="with-gap" name="searchBy" value="phone" [(ngModel)]="restaurantSearchBy" type="radio" checked />
+            <span>Phone</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input class="with-gap" name="searchBy" value="name" [(ngModel)]="restaurantSearchBy" type="radio" />
+            <span>Name</span>
+          </label>
+        </p>
+      </div>
+      <div class="input-field col s12">
+        
+        <input type="text" id="serachrestaurant" [(ngModel)]="searchQuery" (keyup.enter)="onSearch()" required>
+        <label for="serachrestaurant">Restaurant {{restaurantSearchBy}}</label>            
+        <button class="waves-effect waves btn-small white lighten-1 search" (click)="onSearch()">Search</button>
+        <div *ngIf="minLengthError" class="helper-text red-text left">
+          <span>Search keyword should be minimum 3 characters</span>
+        </div>
+      </div>
+  </div>
+
+  <h6 class="red-text" *ngIf="errorMessageToggle">{{errorMessage}}</h6>
+
+  <ul class="collection" *ngIf="restaurants">
+      <li class="collection-item" *ngFor="let restaurant of restaurants; let i=index" (click)="setrestaurant(restaurant)">
+        <span class="title">{{restaurant.name}}</span>
+        <span>{{restaurant.phone}}</span>
+        <span>{{restaurant.city}}</span>
+        <!-- <span class="right created-at">Created on: {{restaurant.created_at | date : 'shortDate'}}</span> -->
+      </li>
+  </ul>
+</div>
+</div>

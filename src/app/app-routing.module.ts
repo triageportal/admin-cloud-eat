@@ -22,6 +22,8 @@ const routes: Routes = [
     loadChildren: () => import('./clinic/clinic.module').then(m => m.ClinicModule),
     canLoad: [AuthGuard]
   },
+  { path: 'restaurant', loadChildren: () => import('./restaurant/restaurant.module').then(m => m.RestaurantModule) },
+  { path: 'account', loadChildren: () => import('./account/account.module').then(m => m.AccountModule) },
 	{ path: '**',  component: PageNotFoundComponent }
 ];
 
