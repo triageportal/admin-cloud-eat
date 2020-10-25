@@ -177,6 +177,12 @@ nav {
   margin: 10px;
   color: $theme-color;
   border: 1px solid $theme-color;
+  &:disabled {
+    background-color: white !important;
+    box-shadow: none;
+    color: #9F9F9F !important;
+    border-color: #9F9F9F !important;
+  }
 }
 
 .result {
@@ -351,7 +357,6 @@ nav {
 
 .portal-forms {
   flex-basis: 33.333%;
-  margin: 0 10px;
   @media (min-width: 320px) and (max-width: 767px) {
     flex-basis: 100%;
   }

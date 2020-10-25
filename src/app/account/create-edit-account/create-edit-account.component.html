@@ -1,0 +1,70 @@
+<h5 class="center-align page-title">Create/Edit account</h5>
+<div class="container">
+  <div class="portal-forms center">
+    <h6 class="red-text error-message" *ngIf="errorMessageToggle">{{errorMessage}}</h6>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate #form>
+
+        <div class="row">
+            <div class="input-field col s12">
+              <label [ngClass]="label" [ngClass]="label" for="first_name">First name</label>
+               <input (click)="onFocus(12)" type="text" id="first_name" formControlName="first_name">
+              <div *ngIf="first_name.errors && (first_name.dirty || first_name.touched )" class="helper-text red-text left">
+                <span *ngIf="first_name.errors.required">First name is required</span>
+              </div>
+            </div>
+          </div>
+    
+          <div class="row">
+            <div class="input-field col s12">
+              <label [ngClass]="label" [ngClass]="label" for="last_name">Last name</label>
+               <input (click)="onFocus(13)" type="text" id="last_name" formControlName="last_name">
+              <div *ngIf="last_name.errors && (last_name.dirty || last_name.touched )" class="helper-text red-text left">
+                <span *ngIf="last_name.errors.required">Last name is required</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <label [ngClass]="label" [ngClass]="label" for="position">Position</label>
+               <input (click)="onFocus(15)" type="text" id="position" formControlName="position">
+              <div *ngIf="position.errors && (position.dirty || position.touched )" class="helper-text red-text left">
+                <span *ngIf="position.errors.required">Position is required</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <label [ngClass]="label" [ngClass]="label" for="email">Email</label>
+               <input (click)="onFocus(14)" type="text" id="email" formControlName="email">
+              <div *ngIf="email.errors && (email.dirty || email.touched )" class="helper-text red-text left">
+                <span *ngIf="email.errors.required">Email is required</span>
+                <span *ngIf="email.errors.email">Wrong email format</span>
+              </div>
+            </div>
+          </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <label [ngClass]="label" [ngClass]="label" for="phone">Phone</label>
+           <input (click)="onFocus(7)" type="text" id="phone" formControlName="phone">
+          <div *ngIf="phone.errors && (phone.dirty || phone.touched )" class="helper-text red-text left">
+            <span *ngIf="phone.errors.required">Phone is required</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 btn-group">
+        <button type="submit" class="waves-effect waves btn-small white" [disabled]="myForm.invalid">Save</button>
+        <button type="button" class="waves-effect waves btn-small white-text red accent-2" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+ 
+
+
+

@@ -1,3 +1,4 @@
+import { AuthService } from './../../auth/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) {}
+  
+  year = new Date().getFullYear();
+  
+  ngOnInit() {  
 
-  ngOnInit(): void {
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }

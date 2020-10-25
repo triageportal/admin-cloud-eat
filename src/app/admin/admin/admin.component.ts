@@ -1,8 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Admin } from 'src/app/interface/admin';
-import { LogoutModalService } from 'src/app/modals/logout-modal/logout-modal.service';
+import { Component, OnInit} from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
-import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -11,11 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
   
-  
-  accessType: string;
-  admin: Admin;
-  
-  constructor(private logoutService: LogoutModalService , private authService: AuthService, private router: Router, private route: ActivatedRoute) {}
+  constructor(private authService: AuthService) {}
   
   year = new Date().getFullYear();
   
