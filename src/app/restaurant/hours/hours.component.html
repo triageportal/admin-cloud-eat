@@ -1,0 +1,79 @@
+<!-- <h5 class="center-align page-title">Create/Edit account</h5>
+<div class="container">
+  <div class="portal-forms center">
+    <h6 class="red-text error-message" *ngIf="errorMessageToggle">{{errorMessage}}</h6> -->
+
+      <ul class="">
+          <li class="" *ngFor="let day of week; let i=index">{{day.day}}
+              <div class="right from-to" (click)="editHours(day, i)">
+                  <span class="from" >From: {{day.from.hour}} {{day.from.ap}}</span>
+                  <span class="to">To: {{day.to.hour}} {{day.to.ap}}</span>
+              </div>
+          </li>
+      </ul>
+<!--   </div>
+</div> -->
+
+<div id="hoursModal" class="modal success"  #hoursModal>
+    <div class="modal-content">
+      <h5>{{day?.day}} hours</h5>
+      <div class="row">
+        <div class="input-field col s6">
+            <div>
+                <select [(ngModel)]="from.hour" #fromOption>
+                    <option [value]="hour" *ngFor="let hour of hoursList; let i=index">{{hour}}</option>
+                </select>
+                <label for="from" #fromOption>From</label>
+            </div>
+            
+            <div class="radio-btns">
+                <p>
+                    <label>
+                      <input class="with-gap" name="fromAp" value="am" [(ngModel)]="from.ap"  type="radio" />
+                      <span>AM</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input class="with-gap" name="fromAp" value="pm" [(ngModel)]="from.ap" type="radio" />
+                      <span>PM</span>
+                    </label>
+                  </p>
+            </div>
+        </div>
+        <div class="input-field col s6">
+
+            <select [(ngModel)]="to.hour" #toOption>
+                <option [value]="hour" *ngFor="let hour of hoursList; let i=index">{{hour}}</option>
+            </select>
+            <label for="to" #toLabel>To</label>
+            <div class="radio-btns">
+                <p>
+                    <label>
+                      <input class="with-gap" name="toAp" value="am" [(ngModel)]="to.ap"  type="radio" />
+                      <span>AM</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input class="with-gap" name="toAp" value="pm" [(ngModel)]="to.ap" type="radio" />
+                      <span>PM</span>
+                    </label>
+                  </p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      
+        <button type="button" class="waves-effect waves btn-small white-text modal-btn" (click)="onSave()">Save</button>
+        <button type="button" class="waves-effect waves btn-small white-text modal-btn" (click)="onCancel()">Cancel</button>
+        
+    </div>
+  </div>
+
+
+ 
+
+
+

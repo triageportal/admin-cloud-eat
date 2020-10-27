@@ -1,1 +1,117 @@
-<p>create-edit-restaurant works!</p>
+<h5 class="center-align page-title">Create/Edit restaurant</h5>
+<div class="container">
+  <div class="portal-forms center">
+    <h6 class="red-text error-message" *ngIf="errorMessageToggle">{{errorMessage}}</h6>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate #form>
+    <div class="row">
+    <div class="input-field col s12">
+        <label [ngClass]="label" [ngClass]="label" for="name">Restaurant name</label>
+         <input type="text" id="name" formControlName="name">
+        <div *ngIf="name.errors && (name.dirty || name.touched )" class="helper-text red-text left">
+        <span *ngIf="name.errors.required">Restaurant name is required</span>
+        </div>
+    </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s12">
+          <label [ngClass]="label" [ngClass]="label" for="addressLineOne">AddressLineOne</label>
+           <input (click)="onFocus(1)" type="text" id="addressLineOne" formControlName="addressLineOne">
+          <div *ngIf="addressLineOne.errors && (addressLineOne.dirty || addressLineOne.touched )" class="helper-text red-text left">
+            <span *ngIf="addressLineOne.errors.required">AddressLineOne is required</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label [ngClass]="label" [ngClass]="label" for="addressLineTwo">AddressLineTwo</label>
+           <input (click)="onFocus(2)" type="text" id="addressLineTwo" formControlName="addressLineTwo">
+          <div *ngIf="addressLineTwo.errors && (addressLineTwo.dirty || addressLineTwo.touched )" class="helper-text red-text left">
+            <span *ngIf="addressLineTwo.errors.required">AddressLineTwo is required</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <label [ngClass]="label" [ngClass]="label" for="city">City</label>
+           <input (click)="onFocus(3)" type="text" id="city" formControlName="city">
+          <div *ngIf="city.errors && (city.dirty || city.touched )" class="helper-text red-text left">
+            <span *ngIf="city.errors.required">City is required</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <label [ngClass]="label" [ngClass]="label" for="zipCode">ZipCode</label>
+           <input (click)="onFocus(4)" type="text" id="zipCode" formControlName="zipCode">
+          <div *ngIf="zipCode.errors && (zipCode.dirty || zipCode.touched )" class="helper-text red-text left">
+            <span *ngIf="zipCode.errors.required">ZipCode is required</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <label [ngClass]="label" [ngClass]="label" for="state">state</label>
+           <input (click)="onFocus(5)" type="text" id="state" formControlName="state">
+          <div *ngIf="state.errors && (state.dirty || state.touched )" class="helper-text red-text left">
+            <span *ngIf="state.errors.required">state is required</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <label [ngClass]="label" [ngClass]="label" for="phone">Phone</label>
+           <input (click)="onFocus(7)" type="text" id="phone" formControlName="phone">
+          <div *ngIf="phone.errors && (phone.dirty || phone.touched )" class="helper-text red-text left">
+            <span *ngIf="phone.errors.required">Phone is required</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <label [ngClass]="label" [ngClass]="label" for="email">Email</label>
+           <input (click)="onFocus(14)" type="text" id="email" formControlName="email">
+          <div *ngIf="email.errors && (email.dirty || email.touched )" class="helper-text red-text left">
+            <span *ngIf="email.errors.required">Email is required</span>
+            <span *ngIf="email.errors.email">Wrong email format</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <label [ngClass]="label" [ngClass]="label" for="website">Website</label>
+           <input (click)="onFocus(9)" type="text" id="website" formControlName="website">
+          <div *ngIf="website.errors && (website.dirty || website.touched )" class="helper-text red-text left">
+            <span *ngIf="website.errors.required">Website is required</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <!-- <a class="left" [routerLink]="['./../restaurant-hours']" >Restaurant hours</a> -->
+          <h6>Restaurant hours</h6>
+        </div>
+      </div>
+
+      <app-hours [week]="week"></app-hours>
+
+
+      <div class="col s12 btn-group">
+        <button type="submit" class="waves-effect waves btn-small white-text indigo lighten-1" [disabled]="myForm.invalid">Save</button>
+        <button type="button" class="waves-effect waves btn-small white-text red accent-2" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+ 
+
+
