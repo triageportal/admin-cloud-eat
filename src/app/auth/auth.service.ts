@@ -85,10 +85,10 @@
           this.router.navigate(['login']);
         }
 
-        assignClinicToUser(id, clinicName){
+        assignAccountToUser(id, accountName){
           let user: User = this.getUser()
-          user.clinic_id = id;
-          user.clinicName = clinicName;
+          /* user.account_id = id;
+          user.accountName = accountName; */
           localStorage.setItem('triage_admin', JSON.stringify(user));
           this.userObservableSource.next(user);
         }

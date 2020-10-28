@@ -32,12 +32,9 @@
   <h6 class="red-text" *ngIf="errorMessageToggle">{{errorMessage}}</h6>
 
   <ul class="collection" *ngIf="accounts">
-      <li class="collection-item" *ngFor="let account of accounts; let i=index" (click)="setaccount(account)">
-        <span class="title">{{account.name}}</span>
-        <span>{{account.city}}</span>
-        <span>{{account.stateOrRegion}}</span>
-        <span>{{account.country}}</span>
-        <span class="right created-at">Created on: {{account.created_at | date : 'shortDate'}}</span>
+      <li class="collection-item" *ngFor="let account of accounts; let i=index" (click)="setAccount(account)">
+        <span class="title">{{account.first_name}} {{account.last_name}}</span>
+        <span>{{account.phone}}</span>
       </li>
   </ul>
 </div>

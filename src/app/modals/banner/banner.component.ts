@@ -37,7 +37,7 @@ export class BannerComponent implements OnInit {
     this.clinicService.assign(0).subscribe(
       result => {
         if (result) {
-          this.authService.assignClinicToUser(0, '');
+          this.authService.assignAccountToUser(0, '');
           this.loader.hide()
         }        
       },

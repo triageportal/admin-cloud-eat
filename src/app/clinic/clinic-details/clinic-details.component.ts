@@ -77,7 +77,7 @@ export class ClinicDetailsComponent implements OnInit {
     this.clinicService.assign(clinic.id).subscribe(
       result => {
         if (result) {
-          this.authService.assignClinicToUser(clinic.id, clinic.name);
+          this.authService.assignAccountToUser(clinic.id, clinic.name);
           this.triModalService.triModalStateSource.next(this.assignSuccess);
         }       
       },

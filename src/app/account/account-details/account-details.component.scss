@@ -1,0 +1,101 @@
+
+  
+  .container {
+    margin-bottom: 40px;
+  }
+h5 {
+    margin: 0;
+}
+.tabs {
+  margin-bottom: 20px;
+  padding-left: 85px;
+  a {
+    text-decoration: none!important;
+  }
+}
+  .portal-forms {
+    max-width: 500px;
+  
+    @media (min-width: 320px) and (max-width: 767px) {
+      width: 100%;
+    }
+  
+    a {
+      margin-left: 12px;
+      margin-bottom: 70px;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  
+    .card {
+        padding: 0px 20px 20px 20px;
+        text-align: left;
+        min-height: 450px;
+        position: relative;
+        .details-list {
+            div:not(.table-row) {
+                padding: 5px;
+            }
+        }
+    }
+
+    .clinic-tabs {
+      row {
+        padding: 0;
+      }
+    }
+
+    .details-tab {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .table {
+      display: table;
+      width: 100%;
+      //height: 30px;
+    }
+
+    .contact-person {
+        margin: 10px 0;
+        padding-top: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #777777;
+        border-top: 1px solid #c1bdbd;
+    }
+  
+    .table-row {
+      display: table;
+      margin: 0 -32px 0px -31px;
+      border-bottom: 2px solid #a5a5a5;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+  
+      .table-cell {
+        display: table-cell;
+        width: 125px;
+        padding: 2px 0;
+        text-align: center;
+        background: #ff7222;
+        color: #ffffff;
+        cursor: pointer;
+  
+        &:hover {
+          background: #ff5e00;
+        }
+  
+        &:not(:last-child) {
+          border-right: 1px solid #ffffff;
+        }
+  
+        &.disabled {
+            background: #ff7322af;
+            color: #e2e2e2;
+            cursor: not-allowed;
+        }
+      }
+    }
+  }
+  

@@ -11,12 +11,25 @@ const routes: Routes = [
     component: AccountComponent,
     children:[
       {
-        path: 'create-edit-account',
-        component: CreateEditAccountComponent
+        path: '',
+        redirectTo: 'account-details',
+        pathMatch: 'full'
       },
       {
         path: 'account-details',
         component: AccountDetailsComponent
+      },
+      {
+        path: 'account-details',
+        component: AccountDetailsComponent
+      },
+      {
+        path: 'create-edit-account',
+        component: CreateEditAccountComponent
+      },
+      {
+        path: 'create-edit-account/:id',
+        component: CreateEditAccountComponent
       }
     ] 
   }

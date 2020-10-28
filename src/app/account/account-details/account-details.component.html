@@ -1,1 +1,59 @@
-<p>account-details works!</p>
+<h5 class="center-align page-title">Account</h5>
+<div class="row">
+  <div class="portal-forms center clinic-tabs">
+    <div class="card">
+      <div class="row">
+        <div class="col s12">
+            <ul class="tabs" #tabs>
+              <li class="tab col"><a (click)="tabSwitch(0)">Accont</a></li>
+              <li class="tab col"><a (click)="tabSwitch(1)">Restaurants</a></li>
+            </ul>
+  
+          </div>
+        <div class="col s12 details-list" [ngStyle]="{'display': clinicTabs[0]}">
+          <div>
+            <span class="staff-label">First name:</span>
+            <span class="staff-data">{{account.first_name}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Last name:</span>
+            <span class="staff-data">{{account.last_name}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Position:</span>
+            <span class="staff-data">{{account.position}}</span>
+          </div>
+
+          <div>
+            <span class="staff-label">Phone</span>
+            <span class="staff-data">{{account.phone}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Email</span>
+            <span class="staff-data">{{account.email}}</span>
+          </div>
+<!--           <div>
+            <span class="staff-label">Status: </span>
+            <span class="staff-data">{{account.status}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Created on: </span>
+            <span class="staff-data">{{account.created_at | date : 'short'}}</span>
+          </div>
+          <div>
+            <span class="staff-label">Created by: </span>
+            <span class="staff-data">{{account.created_by}}</span>
+          </div> -->
+
+          <div class="table-row">
+            <div class="table-cell waves-effect waves" (click)="onAddRest(account)">Add restaurant</div>
+            <div class="table-cell waves-effect waves" (click)="onAssign(account)">Assign</div>
+            <div class="table-cell waves-effect waves" (click)="onEdit(account)">Edit</div>
+            <div class="table-cell waves-effect waves" (click)="onDelete(account)">Delete</div>
+          </div>
+        </div>
+        <div class="col s12" [ngStyle]="{'display': clinicTabs[1]}">Add restaurant</div>
+      </div>
+    </div>
+  </div>
+</div>

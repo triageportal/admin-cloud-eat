@@ -15,10 +15,28 @@ export class AccountCardComponent implements OnInit {
   minLengthError = false;
   errorMessageToggle = false;
   errorMessage = '';
-  accounts: any[];
+  accounts = [
+    {
+      first_name: 'test',
+      last_name: 'test',
+      position: 'test',
+      email: 'test',
+      phone: 'test',
+      id: 1
+    },
+    {
+      first_name: 'test',
+      last_name: 'test',
+      position: 'test',
+      email: 'test',
+      phone: 'test',
+      id: 2
+    },
+  ];
   @ViewChild("searchBy") searchBy: ElementRef;
   searchByInstance: any;
   accountSearchBy = 'email';
+  
 
   constructor(private router: Router, private accountService: AccountService, private loader: LoaderService) { }
 
@@ -56,7 +74,7 @@ export class AccountCardComponent implements OnInit {
     }
   }
 
-  setaccount(account) {
+  setAccount(account) {
     this.accountService.account = account;
     this.router.navigate(['account'])
   }
