@@ -14,7 +14,7 @@
 <!--   </div>
 </div> -->
 
-<div id="hoursModal" class="modal success"  #hoursModal>
+<div id="hoursModal" class="modal warning"  #hoursModal>
     <div class="modal-content">
       <h5>{{day?.day}} hours</h5>
       <div class="row">
@@ -65,10 +65,10 @@
       </div>
     </div>
     <div class="modal-footer">
-      
-        <button type="button" class="waves-effect waves btn-small white-text modal-btn" (click)="onSave()">Save</button>
-        <button type="button" class="waves-effect waves btn-small white-text modal-btn" (click)="onCancel()">Cancel</button>
-        
+      <div class="col s12 btn-group">
+        <button type="button" class="waves-effect waves white btn-small " (click)="onSave()">Save</button>
+        <button type="button" class="waves-effect waves btn-small white-text red accent-2" (click)="onCancel()">Cancel</button>
+    </div>
     </div>
   </div>
 

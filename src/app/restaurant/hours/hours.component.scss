@@ -47,6 +47,9 @@ h6 {
     top: 5%!important;
     height: 85%;
     max-height: 85%;
+    .modal-footer .btn-small {
+        margin: 10px;
+    }
 }
 
 .modal-content {
