@@ -12,10 +12,6 @@ const routes: Routes = [
      component: RestaurantComponent,
      children: [
        {
-         path: 'create-edit-restaurant',
-         component: CreateEditRestaurantComponent
-       },
-       {
          path: 'restaurant-details',
          component: RestaurantDetailsComponent
        },
@@ -23,6 +19,14 @@ const routes: Routes = [
          path: 'restaurant-hours',
          component: HoursComponent
        },
+       {
+        path: 'create-edit-restaurant',
+        component: CreateEditRestaurantComponent
+      },
+      {
+        path: 'create-edit-restaurant/:action/:id',
+        component: CreateEditRestaurantComponent
+      },
      ] 
     }
   ];

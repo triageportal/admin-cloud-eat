@@ -40,7 +40,7 @@ export class AccountDetailsComponent implements OnInit {
   }
 
   onAddRest(account) {
-    
+    this.router.navigate(['/restaurant/create-edit-restaurant/new/' + account.id])
   }
 
   onDelete(account) {

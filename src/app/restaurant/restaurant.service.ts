@@ -51,18 +51,20 @@ constructor(private authService: AuthService, private http: HttpClient) { }
     return this.http.delete<any>(this.domain + 'restaurant?id=' + restaurant.id + '&token=' + token);
   }
 
-  create(restaurant, restaurantId) {
+  create(restaurant, restaurantId, accountId) {
     console.log(restaurant);
     
     const token = this.authService.getToken();
     const headers = new HttpHeaders({'Content-Type': 'application/json'})
     if (restaurantId) {
       restaurant['id'] = restaurantId;
+      restaurant['id'] = restaurantId;
       restaurant['contactName'] = this.restaurantToEdit.contactName;
       restaurant['contactEmail'] = this.restaurantToEdit.contactEmail;
       return this.http.patch<any>(this.domain + 'restaurant?token=' + token, restaurant);
     } else {
-      return this.http.post<any>(this.domain + 'restaurant?token=' + token, restaurant);
+      const body = {restaurant: restaurant, accountId: accountId}
+      return this.http.post<any>(this.domain + 'restaurant?token=' + token, body);
     }  
   }
 

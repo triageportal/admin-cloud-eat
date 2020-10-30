@@ -10,6 +10,12 @@ export class HoursComponent implements OnInit {
 
   from = {hour: '00', ap: 'am'};
   to = {hour: '00', ap: 'am'};
+  test = {day: '', startHour: '00', startIndex: 'am', endHour: '00', endIndex: 'am'}
+
+  startHour = '00';
+  startIndex = 'am';
+  endHour = '00';
+  endIndex = 'am';
 
   @ViewChild("form") form: ElementRef;
   @Output() hoursEmit = new EventEmitter<any>();
@@ -47,29 +53,31 @@ export class HoursComponent implements OnInit {
 
   onSave() {
     this.hoursModalInstance.close()
-    this.day.from.hour = this.from.hour
-    this.day.to.hour = this.to.hour
-    this.day.from.ap = this.from.ap
-    this.day.to.ap = this.to.ap
-    this.from.hour = '00';
-    this.to.hour = '00';
-    this.from.ap = 'am';
-    this.to.ap = 'am';
+    this.day.startHour = this.startHour
+    this.day.endHour = this.endHour
+    this.day.startIndex = this.startIndex
+    this.day.endIndex = this.endIndex
+    this.startHour = '00';
+    this.endHour = '00';
+    this.startIndex = 'am';
+    this.endIndex = 'am';
+    console.log(this.week);
+    
   }
 
   onCancel() {
     this.hoursModalInstance.close()
-    this.from.hour = '00';
-    this.to.hour = '00';
-    this.from.ap = 'am';
-    this.to.ap = 'am';
+    this.startHour = '00';
+    this.endHour = '00';
+    this.startIndex = 'am';
+    this.endIndex = 'am';
   }
 
   editHours(day, index) {
-    this.from.hour = day.from.hour;
-    this.to.hour = day.to.hour;
-    this.from.ap = day.from.ap;
-    this.to.ap = day.to.ap;
+    this.startHour = day.startHour;
+    this.endHour = day.endHour;
+    this.startIndex = day.startIndex;
+    this.endIndex = day.endIndex;
     this.dayIndex = index;
     this.day = day;
     setTimeout(() => {

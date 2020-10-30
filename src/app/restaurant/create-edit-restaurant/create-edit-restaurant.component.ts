@@ -27,6 +27,7 @@ export class CreateEditRestaurantComponent implements OnInit {
   @ViewChild("form") form: ElementRef;
   restaurantId: any;
   week = [];
+  accountId: any;
 
 
   constructor(private triModalService: TriModalService, private route: ActivatedRoute, private fb: FormBuilder, private loader: LoaderService,
@@ -35,7 +36,8 @@ export class CreateEditRestaurantComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.restaurantId = this.route.snapshot.params['id'];
+    const id = this.route.snapshot.params['id'];
+    const action = this.route.snapshot.params['action'];
 
     
     this.myForm = this.fb.group({
@@ -51,11 +53,12 @@ export class CreateEditRestaurantComponent implements OnInit {
     });
 console.log(this.myForm);
 
-    if (this.restaurantId && this.restaurantService.restaurantToEdit && (this.restaurantId == this.restaurantService.restaurantToEdit.id)) {
+    if (action == 'edit' && this.restaurantId) {
       this.setFormValues(this.restaurantService.restaurantToEdit);
       this.week = this.restaurantService.restaurantToEdit.hours;
     } else {
-      this.setWeek()
+      this.accountId = id;
+      this.setWeek();
     }
 
   }
@@ -84,7 +87,7 @@ console.log(this.myForm);
     
     if(this.myForm.valid) {
       this.loader.show()
-      this.restaurantService.create(this.myForm.value, this.restaurantId).subscribe(
+      this.restaurantService.create(this.myForm.value, this.restaurantId, this.accountId).subscribe(
         result => {
           console.log(result);
           
@@ -151,7 +154,7 @@ console.log(this.myForm);
   setWeek() {
     const weekDays = ['Monday', 'Tuesday', 'Wednasday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     weekDays.forEach(item => {
-      this.week.push({day: item, from: {hour: '00', ap: 'am'}, to: {hour: '00', ap: 'am'}})
+      this.week.push({day: item, startHour: '00', startIndex: 'am', endHour: '00', endIndex: 'am'})
     })
   }
 
